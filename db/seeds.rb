@@ -1,3 +1,7 @@
 Product.destroy_all
-Product.create(name: "Product 1", description: "Products 1 is very good")
-Product.create(name: "Product 2", description: "Products 2 is not bad")
+puts "All products were deleted"
+
+20.times do
+  Product.create(name: Faker::Lorem.words(3).join(" ").titleize, description: Faker::Lorem.paragraph(10))
+  puts "Product created"
+end
