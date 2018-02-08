@@ -10,11 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129085340) do
+ActiveRecord::Schema.define(version: 20180208122101) do
+
+  create_table "option_types", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "option_value_variants", force: :cascade do |t|
+    t.integer "variant_id", null: false
+    t.integer "option_value_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "option_values", force: :cascade do |t|
+    t.integer "position", default: 0, null: false
+    t.string "name", null: false
+    t.integer "option_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_option_types", force: :cascade do |t|
+    t.integer "position", default: 0, null: false
+    t.integer "product_id", null: false
+    t.integer "option_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.string "sku", null: false
+    t.integer "product_id", null: false
+    t.decimal "price", null: false
+    t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
