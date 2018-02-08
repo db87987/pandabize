@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 3.2.1'
 gem 'react-rails', '~> 2.4.3'
 gem 'responders'
+gem 'active_model_serializers', '~> 0.10.7'
+
