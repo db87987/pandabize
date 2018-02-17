@@ -9,6 +9,11 @@ wheel_size = OptionType.create!(name: "Wheel size")
 rim_color = OptionType.create!(name: "Rim color", position: 1)
 puts "Option types were created"
 
+#product option types
+ProductOptionType.delete_all
+product_1.option_types << wheel_size
+product_1.option_types << rim_color
+
 #option values
 OptionValue.destroy_all
 wheel_17 = OptionValue.create!(position: 0, name: "17", option_type_id: wheel_size.id)

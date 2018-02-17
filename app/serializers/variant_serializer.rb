@@ -6,6 +6,8 @@ class VariantSerializer < ActiveModel::Serializer
       {
         type: option.option_type.name,
         value: option.name,
+        type_id: option.option_type_id,
+        value_id: option.id,
       }
     end
   end
