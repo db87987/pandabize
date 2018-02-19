@@ -10,7 +10,7 @@ Pandabize Web Store
   cd pandabize
   gem install bundler
   bundle install
-  rake db:migrate db:seed
+  rake db:create db:migrate db:seed
   rails s
 ```
 
